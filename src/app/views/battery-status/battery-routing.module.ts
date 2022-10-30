@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BatteryStatusComponent } from './battery-status.component';
+import { BatteryStatusComponent } from './components/battery-status.component';
 
 const routes: Routes = [
   {

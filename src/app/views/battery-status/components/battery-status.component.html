@@ -1,0 +1,12 @@
+
+
+<p>Battery status works!</p>
+
+<ng-container *ngIf="(vm$ | async)?.length">
+    <div *ngFor="let datapoint of (vm$ | async); index as i">
+        {{ i + 1 }}. {{ datapoint['State-of-Charge']  }}
+    </div>
+</ng-container>
+
+<button (click)="getBatteryStatusDataFor('4')">Click Me</button>
+
