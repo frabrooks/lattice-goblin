@@ -1,0 +1,13 @@
+@import 'style-tokens';
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.grid-row {
+    display: grid;
+    grid-template-columns: repeat($grid-columns, 1fr);
+}
+
+

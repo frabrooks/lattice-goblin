@@ -1,0 +1,41 @@
+@import 'style-tokens';
+
+:host(.grid-column) {
+    // Default spans all 12 columns
+    grid-column: span $grid-columns;
+}
+
+:host(.grid-column--justify-center) {
+    justify-self: center;
+}
+
+:host(.grid-column--justify-start) {
+    justify-self: start;
+}
+
+@media (min-width: $breakpoint-sm) {
+    @for $i from 1 through $grid-columns {
+        :host(.grid-column--sm#{$i}) {
+            grid-column: span $i;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-md) {
+    @for $i from 1 through $grid-columns {
+        :host(.grid-column--md#{$i}) {
+            grid-column: span $i;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-lg) {
+    @for $i from 1 through $grid-columns {
+        :host(.grid-column--lg#{$i}) {
+            grid-column: span $i;
+        }
+    }
+}
+
+
+

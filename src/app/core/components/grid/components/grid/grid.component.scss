@@ -1,0 +1,29 @@
+@import 'style-tokens';
+
+:host(.grid) {
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+    max-width: $grid-width;
+}
+
+@media (min-width: $breakpoint-sm) {
+    :host(.grid) {
+        column-gap: 8px;
+        row-gap: 16px;
+    }
+}
+
+@media (min-width: $breakpoint-md) {
+    :host(.grid) {
+        column-gap: 16px;
+        row-gap: 32px;
+    }
+}
+
+@media (min-width: $breakpoint-lg) {
+    :host(.grid) {
+        column-gap: 32px;
+        row-gap: 64px;
+    }
+}

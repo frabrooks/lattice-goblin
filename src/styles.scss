@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'style-tokens';
+
+*, *:before, *:after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: $primary-color;
+}
+
+main {
+    background: white;
+    min-height: 78vh;
+    .grid {
+        min-height: 78vh;
+    }
+}
+
+
+p, a, span {
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+}
+
+
