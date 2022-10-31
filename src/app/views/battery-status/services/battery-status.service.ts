@@ -16,7 +16,7 @@ export class BatteryStatusService {
         const mockAPIResponse: Subject<BatteryDatapoint[]> = new Subject<BatteryDatapoint[]>();
         setTimeout(() => {
             const dateNum = Number(date);
-            mockAPIResponse.next(dateNum % 2 == 0 ? mockData1 : mockData2);
+            mockAPIResponse.next(dateNum % 2 != 0 ? mockData1 : mockData2);
         }, Math.floor(Math.random() * (800 - 50 + 1)) + 50); // Rand num. 50~800ms
         return mockAPIResponse;
     }

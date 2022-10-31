@@ -4,6 +4,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { CoreModule } from 'src/app/core/core.module';
 import { BatteryRoutingModule } from './battery-routing.module';
 import { BatteryStatusComponent } from './components/battery-status.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { BatteryStatusComponent } from './components/battery-status.component';
     BatteryRoutingModule,
     CommonModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    NgxChartsModule
   ],
   exports: [
     BatteryStatusComponent

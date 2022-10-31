@@ -1,12 +1,45 @@
 
+<header>
+    <h1>Battery Value</h1>
+    <button (click)="getBatteryStatusDataFor()">Click To Change Data</button>
+</header>
 
-<p>Battery status works!</p>
-
-<ng-container *ngIf="(vm$ | async)?.length">
-    <div *ngFor="let datapoint of (vm$ | async); index as i">
-        {{ i + 1 }}. {{ datapoint['State-of-Charge']  }}
+<div class="battery-data--container">
+    <div class="battery-data--chart" *ngIf="(vm$ | async)?.datapoints?.length; else noData">
+        <ngx-charts-bar-vertical
+            [results]="(vm$ | async)?.datapoints"
+            [customColors]="chartColors"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [yScaleMin]="yScaleMin"
+            [yScaleMax]="yScaleMax"
+            [xAxisTickFormatting]="formatXAxisLabel"
+            [yAxisTickFormatting]="formatYAxisLabel">
+            <ng-template #tooltipTemplate let-model="model">
+                <div class="tooltip">
+                {{getTooltipText(model)}}
+                </div>
+            </ng-template>
+        </ngx-charts-bar-vertical>
     </div>
-</ng-container>
+</div>
 
-<button (click)="getBatteryStatusDataFor('4')">Click Me</button>
+<ng-template #noData>
+    <p>No data to show!</p>
+</ng-template>
+
+<div class="legend--container">
+    <span class="legend--legend">Legend:</span>&nbsp;&nbsp;&nbsp;
+    <span class="legend--action-taken">Action taken by battery:</span>&nbsp;&nbsp;&nbsp;
+        <span class="legend--square legend--charged">■</span>&nbsp;Charged&nbsp;&nbsp;&nbsp;
+        <span class="legend--square legend--none">■</span>&nbsp;None&nbsp;&nbsp;&nbsp;
+        <span class="legend--square legend--discharged">■</span>&nbsp;Discharged&nbsp;&nbsp;&nbsp;
+</div>
+
 

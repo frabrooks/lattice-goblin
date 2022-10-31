@@ -476,79 +476,79 @@ export const mockData2: BatteryDatapoint[] = [
     },
     {
       "Period": 19,
+      "Action": "DISCHARGE",
+      "State-of-Charge": 35,
+      "Charged-kwH": 0,
+      "Discharged-kwH": 10
+    },
+    {
+      "Period": 20,
+      "Action": "DISCHARGE",
+      "State-of-Charge": 30,
+      "Charged-kwH": 0,
+      "Discharged-kwH": 10
+    },
+    {
+      "Period": 21,
+      "Action": "NONE",
+      "State-of-Charge": 30,
+      "Charged-kwH": 0,
+      "Discharged-kwH": 0
+    },
+    {
+      "Period": 22,
+      "Action": "CHARGE",
+      "State-of-Charge": 40,
+      "Charged-kwH": 20,
+      "Discharged-kwH": 0
+    },
+    {
+      "Period": 23,
       "Action": "CHARGE",
       "State-of-Charge": 45,
       "Charged-kwH": 10,
       "Discharged-kwH": 0
     },
     {
-      "Period": 20,
+      "Period": 24,
       "Action": "CHARGE",
       "State-of-Charge": 50,
       "Charged-kwH": 10,
       "Discharged-kwH": 0
     },
     {
-      "Period": 21,
+      "Period": 25,
       "Action": "CHARGE",
       "State-of-Charge": 55,
       "Charged-kwH": 10,
       "Discharged-kwH": 0
     },
     {
-      "Period": 22,
-      "Action": "CHARGE",
-      "State-of-Charge": 60,
-      "Charged-kwH": 10,
-      "Discharged-kwH": 0
-    },
-    {
-      "Period": 23,
+      "Period": 26,
       "Action": "CHARGE",
       "State-of-Charge": 65,
-      "Charged-kwH": 10,
-      "Discharged-kwH": 0
-    },
-    {
-      "Period": 24,
-      "Action": "CHARGE",
-      "State-of-Charge": 70,
-      "Charged-kwH": 10,
-      "Discharged-kwH": 0
-    },
-    {
-      "Period": 25,
-      "Action": "NONE",
-      "State-of-Charge": 70,
-      "Charged-kwH": 0,
-      "Discharged-kwH": 0
-    },
-    {
-      "Period": 26,
-      "Action": "NONE",
-      "State-of-Charge": 70,
-      "Charged-kwH": 0,
+      "Charged-kwH": 20,
       "Discharged-kwH": 0
     },
     {
       "Period": 27,
       "Action": "NONE",
-      "State-of-Charge": 70,
+      "State-of-Charge": 65,
       "Charged-kwH": 0,
       "Discharged-kwH": 0
     },
     {
       "Period": 28,
       "Action": "NONE",
-      "State-of-Charge": 70,
+      "State-of-Charge": 65,
       "Charged-kwH": 0,
       "Discharged-kwH": 0
     },
     {
       "Period": 29,
-      "Action": "NONE",
+      "Action": "CHARGE",
       "State-of-Charge": 70,
-      "Charged-kwH": 0,
+      "Charged-kwH": 10,
       "Discharged-kwH": 0
     },
     {
@@ -596,91 +596,91 @@ export const mockData2: BatteryDatapoint[] = [
     {
       "Period": 36,
       "Action": "DISCHARGE",
-      "State-of-Charge": 45,
+      "State-of-Charge": 40,
       "Charged-kwH": 0,
-      "Discharged-kwH": 10
+      "Discharged-kwH": 20
     },
     {
       "Period": 37,
       "Action": "DISCHARGE",
-      "State-of-Charge": 40,
+      "State-of-Charge": 30,
       "Charged-kwH": 0,
-      "Discharged-kwH": 10
+      "Discharged-kwH": 20
     },
     {
       "Period": 38,
       "Action": "NONE",
-      "State-of-Charge": 40,
+      "State-of-Charge": 30,
       "Charged-kwH": 0,
       "Discharged-kwH": 0
     },
     {
       "Period": 39,
       "Action": "NONE",
-      "State-of-Charge": 40,
+      "State-of-Charge": 30,
       "Charged-kwH": 0,
       "Discharged-kwH": 0
     },
     {
       "Period": 40,
       "Action": "NONE",
-      "State-of-Charge": 40,
+      "State-of-Charge": 30,
       "Charged-kwH": 0,
       "Discharged-kwH": 0
     },
     {
       "Period": 41,
       "Action": "NONE",
-      "State-of-Charge": 40,
+      "State-of-Charge": 30,
       "Charged-kwH": 0,
       "Discharged-kwH": 0
     },
     {
       "Period": 42,
       "Action": "NONE",
-      "State-of-Charge": 40,
+      "State-of-Charge": 30,
       "Charged-kwH": 0,
       "Discharged-kwH": 0
     },
     {
       "Period": 43,
       "Action": "NONE",
-      "State-of-Charge": 40,
+      "State-of-Charge": 30,
       "Charged-kwH": 0,
       "Discharged-kwH": 0
     },
     {
       "Period": 44,
       "Action": "NONE",
-      "State-of-Charge": 40,
+      "State-of-Charge": 30,
       "Charged-kwH": 0,
       "Discharged-kwH": 0
     },
     {
       "Period": 45,
       "Action": "NONE",
-      "State-of-Charge": 40,
+      "State-of-Charge": 30,
       "Charged-kwH": 0,
       "Discharged-kwH": 0
     },
     {
       "Period": 46,
       "Action": "NONE",
-      "State-of-Charge": 40,
+      "State-of-Charge": 30,
       "Charged-kwH": 0,
       "Discharged-kwH": 0
     },
     {
       "Period": 47,
       "Action": "NONE",
-      "State-of-Charge": 40,
+      "State-of-Charge": 30,
       "Charged-kwH": 0,
       "Discharged-kwH": 0
     },
     {
       "Period": 48,
       "Action": "NONE",
-      "State-of-Charge": 40,
+      "State-of-Charge": 30,
       "Charged-kwH": 0,
       "Discharged-kwH": 0
     }
