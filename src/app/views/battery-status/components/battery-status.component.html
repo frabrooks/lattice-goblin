@@ -5,7 +5,7 @@
 </header>
 
 <div class="battery-data--container">
-    <div class="battery-data--chart" *ngIf="(vm$ | async)?.datapoints?.length; else noData">
+    <div class="battery-data--chart" *ngIf="(vm$ | async)?.datapoints?.length; else loading">
         <ngx-charts-bar-vertical
             [results]="(vm$ | async)?.datapoints"
             [customColors]="chartColors"
@@ -23,6 +23,7 @@
             [yAxisTickFormatting]="formatYAxisLabel">
             <ng-template #tooltipTemplate let-model="model">
                 <div class="tooltip">
+                {{getActionText(model)}}<br>
                 {{getTooltipText(model)}}
                 </div>
             </ng-template>
@@ -30,8 +31,8 @@
     </div>
 </div>
 
-<ng-template #noData>
-    <p>No data to show!</p>
+<ng-template #loading>
+    <app-loader></app-loader>
 </ng-template>
 
 <div class="legend--container">

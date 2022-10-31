@@ -1,5 +1,11 @@
 @import 'style-tokens';
 
+:host {
+    max-width: 94vw;
+    display: block;
+    margin: 0 auto;
+}
+
 .nav-container {
     width: 100%;
     height: 100%;

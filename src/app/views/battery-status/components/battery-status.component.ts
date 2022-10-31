@@ -50,10 +50,10 @@ export class BatteryStatusComponent implements OnInit, OnDestroy {
     this.destroyed$.complete();
   }
 
-  private _dataToggle = '2';
+  private _mockDate = '2';
   public getBatteryStatusDataFor() {
-    this.store.dispatch(batteryStatusPageDateChanged({ date: this._dataToggle }));
-    this._dataToggle = this._dataToggle == '1' ? '2' : '1'; 
+    this.store.dispatch(batteryStatusPageDateChanged({ date: this._mockDate }));
+    this._mockDate = this._mockDate == '1' ? '2' : '1'; 
   }
 
   public formatXAxisLabel(val: string) {
@@ -67,11 +67,21 @@ export class BatteryStatusComponent implements OnInit, OnDestroy {
 
   public getTooltipText(dp: NGXChartDataPoint): string {
     var rawDatapoint = this.datapointArr.find((v) => xAxisTicks[v.Period - 1] === dp.name);
-    if (rawDatapoint!.Action == 'NONE') return rawDatapoint!['State-of-Charge'] + '% charged';
+    if (rawDatapoint!.Action == 'NONE') return 'At ' + rawDatapoint!['State-of-Charge'] + '% charge';
     if (rawDatapoint!.Action == 'CHARGE') {
         return '+ ' + rawDatapoint!['Charged-kwH'] + ' kWh';
     } else {
         return '- ' + rawDatapoint!['Discharged-kwH'] + ' kWh';
+    }
+  }
+
+  public getActionText(dp: NGXChartDataPoint): string {
+    var rawDatapoint = this.datapointArr.find((v) => xAxisTicks[v.Period - 1] === dp.name);
+    if (rawDatapoint!.Action == 'NONE') return 'No Action';
+    if (rawDatapoint!.Action == 'CHARGE') {
+        return 'Charged';
+    } else {
+        return 'Discharged';
     }
   }
 

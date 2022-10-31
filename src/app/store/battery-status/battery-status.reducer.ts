@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from "@ngrx/store";
 import { BatteryDatapoint } from "src/app/views/battery-status/models/battery-status.model";
-import { newBatteryStatusData } from "./battery-status.actions";
+import { batteryStatusPageDateChanged, newBatteryStatusData } from "./battery-status.actions";
 
 export const userFeatureKey = 'BatteryStatusState';
 
@@ -18,6 +18,11 @@ const reducer = createReducer(
     on(newBatteryStatusData, (state, { data }) => ({
         ...state,
         billingPeriods: data,
+    })),
+
+    on(batteryStatusPageDateChanged, (state) => ({
+        ...state,
+        billingPeriods:  state.billingPeriods.map((v) => ({...v, 'State-of-Charge': v["State-of-Charge"] * 0.75}))
     }))
 
 )
