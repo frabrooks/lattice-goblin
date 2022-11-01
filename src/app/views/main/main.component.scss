@@ -1,9 +1,13 @@
 @import 'style-tokens';
 
 :host {
-    max-width: 94vw;
+    max-width: calc(100vw - 50px);
     display: block;
     margin: 0 auto;
+}
+
+.lhs-nav--column {
+    display: none;
 }
 
 .nav-container {
@@ -52,5 +56,10 @@ nav {
             align-items: center;
         }
     }
+}
 
+@media (min-width: $breakpoint-md) {
+    .lhs-nav--column {
+        display: initial;
+    }
 }

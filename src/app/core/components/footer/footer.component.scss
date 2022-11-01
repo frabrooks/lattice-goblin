@@ -1,11 +1,24 @@
 @import 'style-tokens';
 
 a,p {
-    color: white;
+    color: white;text-align: center;
 }
 
 footer {
     padding: 28px 0;
     background: $primary-color;
 }
+
+div {
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (min-width: $breakpoint-md) {
+    p {
+        text-align: center;
+    }    
+}
+
 

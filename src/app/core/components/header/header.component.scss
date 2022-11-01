@@ -1,5 +1,11 @@
 @import 'style-tokens';
 
+:host {
+    max-width: calc(100vw - 50px);
+    display: block;
+    margin: 0 auto;
+}
+
 a,p {
     color: white;
 }
@@ -39,37 +45,7 @@ a,p {
         }
 
         a:not(:first-child) {
-            margin-left: 32px;
-            font-size: 24px;
-
-            // For animated underline
-            display: inline-block;
-            position: relative;
-            height: fit-content;
-
-            svg {
-                width: 52px;
-                height: 52px;
-                margin: -16px -10px;
-            }
-        }
-
-        a:not(:first-child):after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: white;
-            transform-origin: bottom right;
-            transition: transform 0.25s ease-out;
-        }
-          
-        a:not(:first-child):hover:after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
+            display: none;
         }
 
     }
@@ -83,3 +59,47 @@ a,p {
     }
 
 }
+
+
+
+@media (min-width: $breakpoint-md) {
+
+    .header {
+        nav {
+            a:not(:first-child) {
+                display: inline-block;
+                margin-left: 32px;
+                font-size: 24px;
+            
+                // For animated underline
+                position: relative;
+                height: fit-content;
+            
+                svg {
+                    width: 52px;
+                    height: 52px;
+                    margin: -16px -10px;
+                }
+            }
+            
+            a:not(:first-child):after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: white;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+              
+            a:not(:first-child):hover:after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+        }
+    }
+}
+

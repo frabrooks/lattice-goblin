@@ -1,7 +1,7 @@
 <app-grid>
     <app-grid-row>
-        <app-grid-column [md]="2">
-            <div class="nav-container">
+        <app-grid-column [md]="2" class="lhs-nav--column">
+            <div class="nav-container" >
                 <nav>
                     <a href="/">Nav link 1</a>
                     <a class="sublink" href="/">Nav link 1.1</a>
@@ -15,7 +15,7 @@
                 </nav>
             </div>
         </app-grid-column>
-        <app-grid-column [md]="10">
+        <app-grid-column [md]="10" [sm]="12">
             <router-outlet></router-outlet>
         </app-grid-column>
     </app-grid-row>

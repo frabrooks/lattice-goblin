@@ -6,7 +6,7 @@
 
 <div class="battery-data--container">
     <div class="battery-data--chart" *ngIf="(vm$ | async)?.datapoints?.length; else loading">
-        <ngx-charts-bar-vertical
+        <ngx-charts-bar-vertical class="desktop-chart"
             [results]="(vm$ | async)?.datapoints"
             [customColors]="chartColors"
             [gradient]="gradient"
@@ -20,7 +20,8 @@
             [yScaleMin]="yScaleMin"
             [yScaleMax]="yScaleMax"
             [xAxisTickFormatting]="formatXAxisLabel"
-            [yAxisTickFormatting]="formatYAxisLabel">
+            [yAxisTickFormatting]="formatYAxisLabel"
+            [barPadding]="2">
             <ng-template #tooltipTemplate let-model="model">
                 <div class="tooltip">
                 {{getActionText(model)}}<br>
@@ -28,6 +29,24 @@
                 </div>
             </ng-template>
         </ngx-charts-bar-vertical>
+        <ngx-charts-bar-horizontal class="mobile-chart"
+            [results]="(vm$ | async)?.datapoints"
+            [customColors]="chartColors"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="false"
+            [xAxisLabel]="'Battery Charge (%)'"
+            [barPadding]="2">
+            <ng-template #tooltipTemplate let-model="model">
+                <div class="tooltip">
+                {{getActionText(model)}}<br>
+                {{getTooltipText(model)}}
+                </div>
+            </ng-template>
+        </ngx-charts-bar-horizontal>
     </div>
 </div>
 
